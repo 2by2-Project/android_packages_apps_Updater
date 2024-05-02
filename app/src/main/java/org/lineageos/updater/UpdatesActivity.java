@@ -77,6 +77,8 @@ import org.lineageos.updater.misc.Utils;
 import org.lineageos.updater.model.Update;
 import org.lineageos.updater.model.UpdateInfo;
 
+import jp.project2by2.updater.CustomUpdater;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -272,19 +274,13 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.menu_refresh) {
-            downloadUpdatesList(true);
-            return true;
-        } else if (itemId == R.id.menu_preferences) {
-            showPreferencesDialog();
-            return true;
-        } else if (itemId == R.id.menu_show_changelog) {
-            Intent openUrl = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(Utils.getChangelogURL(this)));
-            startActivity(openUrl);
-            return true;
-        } else if (itemId == R.id.menu_local_update) {
+        if (itemId == R.id.menu_local_update) {
             mUpdateImporter.openImportPicker();
+            return true;
+        } else if (itemId == R.id.menu_download_build) {
+            Intent openUrl = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(CustomUpdater.getDownloadPage()));
+            startActivity(openUrl);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -546,7 +542,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
     private void refreshAnimationStart() {
         if (!mIsTV) {
             if (mRefreshIconView == null) {
-                mRefreshIconView = findViewById(R.id.menu_refresh);
+                //mRefreshIconView = findViewById(R.id.menu_refresh);
             }
             if (mRefreshIconView != null) {
                 mRefreshAnimation.setRepeatCount(Animation.INFINITE);
