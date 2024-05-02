@@ -356,7 +356,7 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
             UpdaterService.LocalBinder binder = (UpdaterService.LocalBinder) service;
             mUpdaterService = binder.getService();
             mAdapter.setUpdaterController(mUpdaterService.getUpdaterController());
-            getUpdatesList();
+            //getUpdatesList();
         }
 
         @Override
