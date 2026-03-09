@@ -57,7 +57,7 @@
     <string name="snack_download_verification_failed">پشکنینی نوێکاری سەرکەوتوو نەبوو.</string>
     <string name="snack_download_verified">داگرتن تەواو بوو.</string>
     <string name="snack_update_not_installable">ئەم نوێکارییە ناتوانرێت لەسەر ئەم وەشانەی ئێستا دابمەزرێنرێت.</string>
-    <string name="header_title_text">LineageOS\n%1$s</string>
+    <string name="header_title_text">2by2 ROM\n%1$s</string>
     <string name="header_android_version">ئەندرۆید %1$s</string>
     <string name="header_last_updates_check">دواین پشکنین: %1$s (%2$s)</string>
     <string name="list_build_version">LineageOS %1$s</string>
